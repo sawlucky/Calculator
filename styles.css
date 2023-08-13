@@ -1,0 +1,124 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(-45deg, #3498db, #9b59b6, #e74c3c, #f39c12);
+    background-size: 400% 400%;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 360px;
+    width: 100%;
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    font-size: 36px;
+    text-align: right;
+    border: none;
+    outline: none;
+    /* margin-top: 0px; */
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size:60px;
+    font-weight: bold;
+    color: #673AB7;
+    /* text-align: center; */
+    padding-right: 25%;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    animation: animateLetters 5s infinite;
+}
+
+@keyframes animateLetters {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+.heading::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: black;
+    margin: 5px auto;
+    transition: width 0.3s;
+}
+
+.heading:hover::after {
+    width: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+button {
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s;
+}
+
+button:hover {
+    background-color: #eee;
+    transform: scale(1.05);
+}
+.calculator {
+    background-image: url('calculator-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Other styles for the calculator container */
+}
+
+button:active {
+    background-color: #ddd;
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: #ff5722;
+    color: #fff;
+}
